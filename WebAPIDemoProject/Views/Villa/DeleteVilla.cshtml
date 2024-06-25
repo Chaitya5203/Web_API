@@ -1,0 +1,67 @@
+﻿@model WebAPIDemoRepositorys.ViewModel.VillaDTO;
+
+<form asp-action="DeleteVilla" method="post">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Update Villa</h1>
+        <hr />
+        <input type="hidden" asp-for="Id" />
+        <div class="row">
+            <div class="col-2">
+                <label asp-for="Name" class="control-label" style="font-size:20px;">
+
+                </label>
+            </div>
+            <div class="col-10 mb-3">
+                <input asp-for="Name" disabled class="form-control" />
+            </div>
+            <div class="col-2">
+                <label asp-for="Rate" class="control-label" style="font-size:20px;">
+
+                </label>
+            </div>
+            <div class="col-10 mb-3">
+                <input asp-for="Rate" disabled class="form-control" />
+            </div>
+            <div class="col-2">
+                <label asp-for="Details" class="control-label" style="font-size:20px;">
+
+                </label>
+            </div>
+            <div class="col-10 mb-3">
+                <textarea asp-for="Details" disabled class="form-control" rowa="5"></textarea>
+            </div>
+            <div class="col-2">
+                <label asp-for="occupancy" class="control-label" style="font-size:20px;">
+
+                </label>
+            </div>
+            <div class="col-10 mb-3">
+                <input asp-for="occupancy" disabled class="form-control" />
+            </div>
+            <div class="col-2">
+                <label asp-for="sqft" class="control-label" style="font-size:20px;">
+
+                </label>
+            </div>
+            <div class="col-10 mb-3">
+                <input asp-for="sqft" disabled class="form-control" />
+            </div>
+            <div class="col-2">
+                <label asp-for="Amenity" class="control-label" style="font-size:20px;">
+
+                </label>
+            </div>
+            <div class="col-10 mb-3">
+                <textarea asp-for="Amenity" disabled class="form-control"></textarea>
+            </div>
+            <div class="col-5 offset-2">
+                <a asp-action="IndexVilla" class="btn btn-primary form-control">Back to List</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" class="btn btn-danger form-control" value="Delete" />
+            </div>
+        </div>
+    </div>
+</form>
+<partial name="_ValidationScriptsPartial" />

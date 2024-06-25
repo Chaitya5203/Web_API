@@ -1,0 +1,75 @@
+﻿@model WebAPIDemoRepositorys.ViewModel.VillaDTO
+<form asp-action="CreateVilla" method="post" asp-controller="Villa">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Create Villa</h1>
+        <hr />
+        <div class="row">
+            <div class="col-2">
+                <label asp-for="Name" class="control-label" style="font-size:20px;">
+                </label>
+            </div>
+            <div class="col-10 mb-3">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="Rate" class="control-label" style="font-size:20px;">
+
+                </label>
+            </div>
+            <div class="col-10 mb-3">
+                <input asp-for="Rate" class="form-control" />
+                <span asp-validation-for="Rate" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="Details" class="control-label" style="font-size:20px;">
+
+                </label>
+            </div>
+            <div class="col-10 mb-3">
+                <textarea asp-for="Details" class="form-control" rowa="5"></textarea>
+                <span asp-validation-for="Details" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="occupancy" class="control-label" style="font-size:20px;">
+
+                </label>
+            </div>
+            <div class="col-10 mb-3">
+                <input asp-for="occupancy" class="form-control" />
+                <span asp-validation-for="occupancy" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="sqft" class="control-label" style="font-size:20px;">
+
+                </label>
+            </div>
+            <div class="col-10 mb-3">
+                <input asp-for="sqft" class="form-control" />
+                <span asp-validation-for="sqft" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label asp-for="Amenity" class="control-label" style="font-size:20px;">
+
+                </label>
+            </div>
+            <div class="col-10 mb-3">
+                <textarea asp-for="Amenity" class="form-control"></textarea>
+                <span asp-validation-for="Amenity" class="text-danger"></span>
+            </div>
+            <div class="col-5 offset-2">
+                <a asp-action="IndexVilla" class="btn btn-primary form-control">Back to List</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" class="btn btn-success form-control" />
+            </div>
+
+        </div>
+    </div>
+</form>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

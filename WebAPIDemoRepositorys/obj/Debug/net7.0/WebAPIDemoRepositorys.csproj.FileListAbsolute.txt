@@ -1,0 +1,14 @@
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\bin\Debug\net7.0\WebAPIDemoRepositorys.deps.json
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\bin\Debug\net7.0\WebAPIDemoRepositorys.runtimeconfig.json
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\bin\Debug\net7.0\WebAPIDemoRepositorys.dll
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\bin\Debug\net7.0\WebAPIDemoRepositorys.pdb
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\obj\Debug\net7.0\WebAPIDemoRepositorys.csproj.AssemblyReference.cache
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\obj\Debug\net7.0\WebAPIDemoRepositorys.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\obj\Debug\net7.0\WebAPIDemoRepositorys.AssemblyInfoInputs.cache
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\obj\Debug\net7.0\WebAPIDemoRepositorys.AssemblyInfo.cs
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\obj\Debug\net7.0\WebAPIDemoRepositorys.csproj.CoreCompileInputs.cache
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\obj\Debug\net7.0\WebAPIDemoRepositorys.dll
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\obj\Debug\net7.0\refint\WebAPIDemoRepositorys.dll
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\obj\Debug\net7.0\WebAPIDemoRepositorys.pdb
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\obj\Debug\net7.0\WebAPIDemoRepositorys.genruntimeconfig.cache
+D:\ProjectMvc\WebAPIDemo\WebAPIDemoRepositorys\obj\Debug\net7.0\ref\WebAPIDemoRepositorys.dll
