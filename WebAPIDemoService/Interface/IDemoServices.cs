@@ -9,5 +9,6 @@ namespace WebAPIDemoService.Interface
         Task<T> CreateAsync<T>(VillaDTO villaDTo);
         Task<T> UpdateAsync<T>(VillaDTO villaDTo);
         Task<T> DeleteAsync<T>(int id);
+        VillaDto2 GetVillas(int pageIndex, int pageSize);
     }
 }

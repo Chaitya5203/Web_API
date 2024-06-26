@@ -1,7 +1,10 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using WebAPIDemoRepositorys.Interface;
 using WebAPIDemoRepositorys.ViewModel;
 using WebAPIDemoService.Interface;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace WebAPIDemoService.Implementation
 {
     public class DemoServices : BaseServices, IDemoServices
@@ -49,6 +52,44 @@ namespace WebAPIDemoService.Implementation
                 Url = villaUrl + "/api/VillaAPI/"+id,
             });
         }
+        public VillaDto2 GetVillas(int pageIndex, int pageSize)
+        {
+            var count = _repository.GetVillaCount();
+            VillaDto2 villaDto = new VillaDto2();
+            
+            var villas = _repository.GetVillas(pageIndex, pageSize)
+                                        .Select(v => new VillaDTO
+                                        {
+                                            Id = v.Id,
+                                            Name = v.Name,
+                                            Amenity = v.Amenity,
+                                            Details = v.Details,    
+                                            Rate = (decimal)v.Rate,
+                                            sqft = (int)v.Sqft,
+                                            occupancy = (int)v.Occupancy,
+                                        })
+                                        .ToList();
+            villaDto.data = villas;
+            villaDto.CurrentPage = pageIndex;
+            var totalPages = (int)Math.Ceiling(count / (double)pageSize);
+            villaDto.NextPage = totalPages != pageIndex;
+            villaDto.PreviousPage = pageIndex != 1;
+            villaDto.TotalPages = count;
+            return villaDto;
+        }
+        //public List<VillaDTO> GetVillas(int pageIndex, int pageSize)
+        //{
+        //    IQueryable<VillaDTO> query;
+        //    query =_repository.Getvillas(pageIndex, pageSize);
+        //    var count = _repository.GetVillaCount();
+        //    
+        //    return new VillaDTO()
+        //    {
+        //        PageNumber = pageIndex,
+        //        PageSize = totalPages,
+        //        data=query.AsQueryable().ToList,
+        //    };
+        //}
         public Task<T> UpdateAsync<T>(VillaDTO villaDTo)
         {
             return SendAsync<T>(new APIRequest()

@@ -25,17 +25,22 @@ namespace WebAPIDemo.Controllers
         }
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult<APIResponse> GetVillas()
+        public ActionResult<APIResponse> GetVillas(int pageIndex = 1, int pageSize = 1)
         {
             APIResponse response = new APIResponse();
             try
             {
+                if (pageIndex < 1)
+                    pageIndex = 1;
+                if (pageSize < 1)
+                    pageSize = 10;
+                var villas = _service.GetVillas(pageIndex, pageSize);
                 _logger.LogInformation("Getting All Villas");
                 response = new()
                 {
                     StatusCode = HttpStatusCode.OK,
                     IsSuccess = true,
-                    Result = _context.Villainfos.ToList()
+                    Result = villas,                    
                 };
                 return Ok(response);
             }

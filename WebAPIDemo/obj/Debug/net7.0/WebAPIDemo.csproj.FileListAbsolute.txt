@@ -60,3 +60,4 @@ D:\ProjectMvc\WebAPIDemo\WebAPIDemo\obj\Debug\net7.0\refint\WebAPIDemo.dll
 D:\ProjectMvc\WebAPIDemo\WebAPIDemo\obj\Debug\net7.0\WebAPIDemo.pdb
 D:\ProjectMvc\WebAPIDemo\WebAPIDemo\obj\Debug\net7.0\WebAPIDemo.genruntimeconfig.cache
 D:\ProjectMvc\WebAPIDemo\WebAPIDemo\obj\Debug\net7.0\ref\WebAPIDemo.dll
+D:\ProjectMvc\WebAPIDemo\WebAPIDemo\obj\Debug\net7.0\WebAPIDemo.sourcelink.json
