@@ -1,4 +1,6 @@
-﻿using WebAPIDemoRepositorys.ViewModel;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using WebAPIDemoRepositorys.Data;
+using WebAPIDemoRepositorys.ViewModel;
 
 namespace WebAPIDemoService.Interface
 {
@@ -10,5 +12,11 @@ namespace WebAPIDemoService.Interface
         Task<T> UpdateAsync<T>(VillaDTO villaDTo);
         Task<T> DeleteAsync<T>(int id);
         VillaDto2 GetVillas(int pageIndex, int pageSize);
+        Villainfo getvillabyid(int id);
+        Villainfo UpdateVilla(int id, VillaDTO villaDTo);
+        bool GetVillaByName(string? name);
+        void CreateVilla(VillaDTO villaDTo);
+        void DeleteVilla(Villainfo villa);
+        void UpdatePartialVilla(int id, JsonPatchDocument<VillaDTO> patchDTO);
     }
 }

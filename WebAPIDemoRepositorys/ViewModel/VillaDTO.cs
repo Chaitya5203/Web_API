@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using WebAPIDemoRepositorys.Data;
-
+﻿using System.ComponentModel.DataAnnotations;
 namespace WebAPIDemoRepositorys.ViewModel
 {
     public class VillaDTO
@@ -9,15 +6,12 @@ namespace WebAPIDemoRepositorys.ViewModel
         public int Id { get; set; }
         [Required]
         [MaxLength(25)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public string Details { get; set; }
         public decimal Rate { get; set; }
         public int sqft { get; set; }
         public string? Amenity { get; set; }
         public int occupancy { get; set; }
-        //public int PageSize { get; set; }
-        //public int PageNumber { get; set; }
-        //public List<VillaDTO> data { get; set; }
     }
     public class VillaDto2
     {

@@ -18,6 +18,7 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddHttpClient<IDemoServices, DemoServices>();
 builder.Services.AddScoped<IDemoServices, DemoServices>();
 builder.Services.AddScoped<IDemoRepository, DemoRepository>();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var app = builder.Build();
