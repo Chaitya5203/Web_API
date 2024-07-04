@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using WebAPIDemoRepositorys.ViewModel;
-
 namespace WebAPIDemo.Controllers
 {
     [Route("api/[controller]")]
@@ -20,7 +18,6 @@ namespace WebAPIDemo.Controllers
             };
             return Ok(response);
         }
-
         protected ActionResult<APIResponse> ErrorResponse(string errorMessages)
         {
             var response = new APIResponse

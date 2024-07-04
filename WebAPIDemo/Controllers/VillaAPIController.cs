@@ -1,9 +1,5 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.JsonPatch;
+﻿using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Net;
-using WebAPIDemoRepositorys.Data;
 using WebAPIDemoRepositorys.ViewModel;
 using WebAPIDemoService.Interface;
 namespace WebAPIDemo.Controllers
@@ -14,18 +10,14 @@ namespace WebAPIDemo.Controllers
     {
         private readonly IDemoServices _service;
         private ILogger<VillaAPIController> _logger;
-        private readonly ApplicationContext _context;
-        private readonly IMapper _mapper;
-        public VillaAPIController(ILogger<VillaAPIController> logger, IDemoServices service )
+        public VillaAPIController(ILogger<VillaAPIController> logger, IDemoServices service)
         {
             _logger = logger;
-            //_context = context;
             _service = service;
-            //_mapper = mapper;
         }
         [HttpGet("villa")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult<APIResponse> GetVillas(int pageIndex = 1, int pageSize = 1)
+        public async Task<ActionResult<APIResponse>> GetVillas(int pageIndex = 1, int pageSize = 1, string search = null)
         {
             try
             {
@@ -33,9 +25,28 @@ namespace WebAPIDemo.Controllers
                     pageIndex = 1;
                 if (pageSize < 1)
                     pageSize = 10;
-                var villas = _service.GetVillas(pageIndex, pageSize);
-                _logger.LogInformation("Getting All Villas");
-                return SuccessResponse(villas, "Getting All Villas");
+                
+                if (!string.IsNullOrEmpty(search))
+                {
+                    var villaDto = await _service.GetVillas(pageIndex, pageSize, search);
+                    _logger.LogInformation("Getting Villas");
+                    return SuccessResponse(villaDto, "Getting Villas");
+                    //var result = await _service.Search(pageIndex, pageSize,search);
+                    //if (result.Any())
+                    //{
+                    //    return SuccessResponse(result, "Getting Search Filter Wise Villa");
+                    //}
+                    //else
+                    //{
+                    //    return ErrorResponse("No villas matched the search criteria");
+                    //}
+                }
+                else
+                {
+                    var villas = await _service.GetVillas(pageIndex, pageSize);
+                    _logger.LogInformation("Getting All Villas");
+                    return SuccessResponse(villas, "Getting All Villas");
+                }
             }
             catch (Exception ex)
             {
@@ -50,7 +61,6 @@ namespace WebAPIDemo.Controllers
         {
             try
             {
-
                 if (id == 0)
                 {
                     _logger.LogError("Get Villa Error With Id :" + id);
@@ -86,10 +96,6 @@ namespace WebAPIDemo.Controllers
                 if (villaDTo == null)
                 {
                     return ErrorResponse("Data not Exist Perfectly");
-                }
-                if (villaDTo.Id > 0)
-                {
-                    return StatusCode(StatusCodes.Status500InternalServerError);
                 }
                 _service.CreateVilla(villaDTo);
                 return SuccessResponse(villaDTo, "Villa Created Successfully");
@@ -131,11 +137,11 @@ namespace WebAPIDemo.Controllers
         {            
             try
             {
-                if (villaDTo == null || id != villaDTo.Id)
+                if (villaDTo == null)
                 {
                     return ErrorResponse("Vila not found");
                 }
-                var villaInfo = _service.UpdateVilla(id, villaDTo);
+                var villaInfo = _service.UpdateVilla(id, villaDTo);                
                 return SuccessResponse(villaInfo, "Getting All Villas");               
             }
             catch (Exception ex)
@@ -164,5 +170,27 @@ namespace WebAPIDemo.Controllers
             }
             return NoContent();
         }
+
+        //[HttpGet("villa/{search}")]
+        //public async Task<ActionResult<APIResponse>> Search(string name)
+        //{
+        //    try
+        //    {
+        //        var result = await _service.Search(name);
+
+        //        if (result.Any())
+        //        {
+        //            return SuccessResponse(result, "Getting Search Filter Wise Villa");
+        //        }
+        //        else
+        //        {
+        //            return ErrorResponse("No villas matched the search criteria");
+        //        }                
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return ErrorResponse(ex.Message);
+        //    }
+        //}
     }
 }

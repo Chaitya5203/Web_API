@@ -3,7 +3,6 @@ namespace WebAPIDemoRepositorys.ViewModel
 {
     public class VillaDTO
     {
-        public int Id { get; set; }
         [Required]
         [MaxLength(25)]
         public string? Name { get; set; }
@@ -19,6 +18,6 @@ namespace WebAPIDemoRepositorys.ViewModel
         public int CurrentPage { get; set; }
         public bool PreviousPage { get; set; }
         public bool NextPage { get; set; }
-        public List<VillaDTO>? data { get; set; }
+        public List<GetAllVillaDTO>? data { get; set; }
     }
 }

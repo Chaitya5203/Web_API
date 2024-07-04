@@ -2,14 +2,14 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace WebAPIDemoRepositorys.Data;
 [Table("villainfo")]
-public partial class Villainfo
+public partial class Villainfo : BaseEntity
 {
-    [Key]
-    [Column("id")]
-    public int Id { get; set; }
-    [Column("name")]
-    [StringLength(100)]
-    public string Name { get; set; } = null!;
+    //[Key]
+    //[Column("id")]
+    //public int Id { get; set; }
+    //[Column("name")]
+    //[StringLength(100)]
+    //public string Name { get; set; } = null!;
     [Column("details")]
     [StringLength(100)]
     public string Details { get; set; } = null!;

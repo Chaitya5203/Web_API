@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebAPIDemoRepositorys.Data;
-
-namespace WebAPIDemoRepositorys.Interface
+﻿namespace WebAPIDemoRepositorys.Interface
 {
-    public interface IGenericRepository<T> where T : class
+    public interface IGenericRepository<T> where T : BaseEntity
     {
         IEnumerable<T> GetAll(int pageIndex,int pageSize);
         T Get(int Id);
@@ -15,8 +8,11 @@ namespace WebAPIDemoRepositorys.Interface
         void Update(T entity);
         void Delete(T entity);
         void Remove(T entity);
-        void SaveChanges();
+        void Save();
         int GetVillaCount();
         bool GetByName(string name);
+        Task<int> CountByName(string name);
+        //Task<IEnumerable<T>> Search(int pageIndex, int pageSize, string name);
+        IQueryable<T> Search(string name, int pageIndex, int pageSize);
     }
 }

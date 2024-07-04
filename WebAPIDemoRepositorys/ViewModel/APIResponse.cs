@@ -1,6 +1,5 @@
 ﻿using System.Net;
 using System.Text.Json.Serialization;
-
 namespace WebAPIDemoRepositorys.ViewModel
 {
     public class APIResponse
