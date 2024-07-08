@@ -61,3 +61,10 @@ D:\ProjectMvc\WebAPIDemo\WebAPIDemo\obj\Debug\net7.0\WebAPIDemo.pdb
 D:\ProjectMvc\WebAPIDemo\WebAPIDemo\obj\Debug\net7.0\WebAPIDemo.genruntimeconfig.cache
 D:\ProjectMvc\WebAPIDemo\WebAPIDemo\obj\Debug\net7.0\ref\WebAPIDemo.dll
 D:\ProjectMvc\WebAPIDemo\WebAPIDemo\obj\Debug\net7.0\WebAPIDemo.sourcelink.json
+D:\ProjectMvc\WebAPIDemo\WebAPIDemo\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\ProjectMvc\WebAPIDemo\WebAPIDemo\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\ProjectMvc\WebAPIDemo\WebAPIDemo\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\ProjectMvc\WebAPIDemo\WebAPIDemo\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\ProjectMvc\WebAPIDemo\WebAPIDemo\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\ProjectMvc\WebAPIDemo\WebAPIDemo\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\ProjectMvc\WebAPIDemo\WebAPIDemo\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

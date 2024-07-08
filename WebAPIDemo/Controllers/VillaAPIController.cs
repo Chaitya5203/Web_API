@@ -16,6 +16,7 @@ namespace WebAPIDemo.Controllers
             _service = service;
         }
         [HttpGet("villa")]
+        //[Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<APIResponse>> GetVillas(int pageIndex = 1, int pageSize = 1, string search = null)
         {
@@ -53,6 +54,7 @@ namespace WebAPIDemo.Controllers
                 return ErrorResponse(ex.Message);
             }
         }
+        //[Authorize]
         [HttpGet("villa/{id:int}", Name = "GetVilla")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -79,6 +81,7 @@ namespace WebAPIDemo.Controllers
             }
         }
         [HttpPost("villa")]
+        //[Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -106,6 +109,7 @@ namespace WebAPIDemo.Controllers
             }
         }
         [HttpDelete("villa/{id:int}", Name = "DeleteVilla")]
+        //[Authorize]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
